@@ -1,16 +1,18 @@
-<%= form_tag '/posts' do %>
-
+<% if @post.errors.any? %>
+  <div style='border: solid 1px red;'>
+    <%= @post.errors.full_messages.join(", ") %>
+  </div>
 <% end %>
 
+<%= form_for @post do |f| %>
+  <div>
+    <%= f.label :title, "Your title" %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
 
-1. Add a 'new' action to your controller
-2. Render new.html.erb
-3. Fill in the example form above
-4. Add a 'create' action to your controller
-   - Post.create(title: params[:title], ... )
-
-5. Redirect to index in the create action like this:
-
-   redirect_to '/posts'
-
-Commit to git all the time! Test your changes one at a time!
+  <%= f.submit %>
+<% end %>

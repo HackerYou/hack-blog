@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
 
+  validates :title, presence: true
+
   def lead
     if content.length < 100
       content
