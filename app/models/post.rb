@@ -20,7 +20,6 @@ class Post < ActiveRecord::Base
   end
 
   def same_category?(post)
-    self.cateogry == post.category
+    self.category == post.category
   end
-
 end
