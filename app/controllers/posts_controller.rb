@@ -22,6 +22,12 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def search
+    @posts = Post.entitled(params[:q])
+
+    render 'index'
+  end
+
   def post_params
     params.require(:post).permit(:title, :content, :author, :category)
   end

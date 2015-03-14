@@ -2,6 +2,10 @@ class Post < ActiveRecord::Base
 
   validates :title, presence: true
 
+  def self.entitled(title)
+    where(title: title)
+  end
+
   def lead
     if content.length < 100
       content

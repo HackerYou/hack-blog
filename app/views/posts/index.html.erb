@@ -1,3 +1,8 @@
+<%= form_tag posts_search_path, method: :get do %>
+  <%= text_field_tag :q, params[:q], placeholder: 'search' %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
 <% @posts.each do |post| %>
   <h2><%= post.title %></h2>
   <p><%= post.content %></p>
