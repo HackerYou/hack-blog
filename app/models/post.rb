@@ -6,6 +6,12 @@ class Post < ActiveRecord::Base
     where(title: title)
   end
 
+  def self.search(term)
+    matcher = "%#{term.downcase}%"
+
+    where("lower(title) like ? OR lower(content) like ?", matcher, matcher)
+  end
+
   def lead
     if content.length < 100
       content
