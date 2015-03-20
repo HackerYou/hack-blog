@@ -1,0 +1,9 @@
+.main-header {
+	@include outer-container;
+	h1 {
+		@include span-columns(8);
+	}
+	.contact {
+		@include span-columns(4);
+	}
+}

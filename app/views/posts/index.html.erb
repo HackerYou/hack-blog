@@ -3,7 +3,4 @@
   <%= submit_tag 'Search' %>
 <% end %>
 
-<% @posts.each do |post| %>
-  <h2><%= post.title %></h2>
-  <p><%= post.content %></p>
-<% end %>
+<%= render @posts %>

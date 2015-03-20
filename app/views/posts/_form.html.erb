@@ -1,0 +1,29 @@
+<% if @post.errors.any? %>
+  <div style='border: solid 1px red;'>
+    <%= @post.errors.full_messages.join(", ") %>
+  </div>
+<% end %>
+
+<%= form_for @post do |f| %>
+  <div>
+    <%= f.label :title, "Your title" %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+  <div>
+    <%= f.label :author %>
+    <%= f.text_field :author %>
+  </div>
+
+  <div>
+    <%= f.label :category %>
+    <%= f.text_field :category %>
+  </div>
+
+
+  <%= f.submit %>
+<% end %>
