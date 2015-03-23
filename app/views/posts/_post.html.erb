@@ -4,10 +4,11 @@
 	</div>
   <h2 class='post-title'>
     <%= link_to post_path(post) do %>
-      <%= post.title %> 
+      <%= post.title %>
     <% end %>
   </h2>
   <p class='post-content'><%= post.lead %></p>
+  <p><%= link_to "Delete", post_path(post), method: :delete %></p>
 
   <%= link_to 'Read Article', post_path(post), class: 'button' %>
 </article>

@@ -26,7 +26,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to '/posts'
+      redirect_to '/posts', notice: "Post create!"
     else
       render 'new'
     end
@@ -40,6 +40,15 @@ class PostsController < ApplicationController
     @posts = Post.entitled(params[:q])
 
     render 'index'
+  end
+
+  # DELETE /posts/:id
+  def destroy
+    @post = Post.find(params[:id])
+
+    @post.destroy
+
+    redirect_to posts_url, notice: "Post deleted"
   end
 
   def post_params
