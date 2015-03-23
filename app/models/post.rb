@@ -13,11 +13,11 @@ class Post < ActiveRecord::Base
   end
 
   def lead
-    if content.length < 100
+    if content.length < 300
       content
     else
-      "#{content.first(100)}..."
-      # "#{content.first(content.index(" ", 100))}..."
+      "#{content.first(300)}..."
+      # "#{content.first(content.index(" ", 300))}..."
     end
   end
 

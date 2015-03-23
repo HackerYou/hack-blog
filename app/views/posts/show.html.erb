@@ -1,0 +1,9 @@
+<article class='post'>
+  <div class='post-byline'>
+    Posted by <%= @post.author %> in <%= @post.category %>
+  </div>
+  <h2 class='post-title'><%= @post.title %> </h2>
+  <p class='post-content'><%= @post.content %></p>
+
+  <%= link_to 'Back to Home', posts_path, class: 'button' %>
+</article>

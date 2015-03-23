@@ -1,7 +1,13 @@
-<div class='post'>
-	<h2 class='title'><%= post.title %></h2>
-	<p><%= post.content %></p>
-	<div class='byline'>
+<article class='post'>
+	<div class='post-byline'>
 		Posted by <%= post.author %> in <%= post.category %>
 	</div>
-</div>
+  <h2 class='post-title'>
+    <%= link_to post_path(post) do %>
+      <%= post.title %> 
+    <% end %>
+  </h2>
+  <p class='post-content'><%= post.lead %></p>
+
+  <%= link_to 'Read Article', post_path(post), class: 'button' %>
+</article>
