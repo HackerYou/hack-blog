@@ -1,0 +1,20 @@
+footer{
+  padding: 20px 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  font-size: 0;
+  .contact{
+    display: inline-block;
+    width: 40%;
+    font-size: 14px;
+    vertical-align: middle;
+  }
+
+  .footerText{
+    display: inline-block;
+    width: 60%;
+    font-size: 11px;
+    opacity: 0.6;
+    vertical-align: middle;
+    text-align: right;
+  }
+}

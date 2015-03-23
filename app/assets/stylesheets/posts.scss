@@ -2,12 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.post {
-	.title {
-		font-weight: 200;
-	}
-	.byline {
-		color: $lighter-color;
-		font-style: italic;
-	}
+.post{
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: "Libre Baskerville",serif;
+  padding: 72px 12px;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  &:last-of-type{
+    border-bottom: none;
+  }
+}
+
+.post-byline{
+  font-style: italic;
+  opacity: 0.4;
+}
+
+.post-title{
+  font-size: 24px;
+  line-height: 36px;
+  position: relative;
+  margin-top: 20.4px;
+  margin-bottom: 18px;
+  font-weight: 700;
+  color: rgba(0,0,0,.75);
+
+  a{
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease-in-out;
+    color: inherit;
+    text-decoration: none;
+    &:hover{
+      border-color: $primaryColor;
+    }
+  }
+}
+
+.post-content{
+  line-height: 30px;
+  margin-bottom: 24px;
+  color: $mediumGrey;
 }

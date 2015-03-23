@@ -1,5 +1,53 @@
+$primaryColor: #1abc9c;
+$mediumGrey: #777;
+
+*, *:before, *:after{box-sizing: border-box;}
+
 body {
-	font-family: 'Helvetica';
+	font-family: "Libre Baskerville", serif;
 	font-size: 16px;
 	line-height: 1.5em;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper{
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.button{
+  border: 1px solid rgba(0,0,0,.16);
+  color: rgba(0,0,0,.32);
+  height: 36px;
+  background: 0 0;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 36px;
+  text-transform: uppercase;
+  padding: 0 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  font-family: "Open Sans",sans-serif;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+
+  &:hover{
+    border-color: $primaryColor;
+    color: $primaryColor;
+  }
+}
+
+.searchField{
+  font-family: "Open Sans",sans-serif;
+  border: 1px solid rgba(0,0,0,.12);
+  padding: 8px;
+  border-radius: 2px;
+  max-width: 360px;
+  min-width: 250px;
+  font-size: 14px;
+  margin: 0;
+  display: inline-block;
 }

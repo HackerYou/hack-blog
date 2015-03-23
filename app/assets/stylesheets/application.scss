@@ -12,11 +12,9 @@
  *
  */
 
-@import 'bourbon';
-@import 'neat';
-
 $lighter-color: #666;
 
 @import 'base_styles';
-@import 'posts';
 @import 'header';
+@import 'posts';
+@import 'footer';

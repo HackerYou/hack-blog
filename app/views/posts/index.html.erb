@@ -1,6 +1,1 @@
-<%= form_tag posts_search_path, method: :get do %>
-  <%= text_field_tag :q, params[:q], placeholder: 'search' %>
-  <%= submit_tag 'Search' %>
-<% end %>
-
 <%= render @posts %>
