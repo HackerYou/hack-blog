@@ -12,6 +12,10 @@ class Post < ActiveRecord::Base
     where("lower(title) like ? OR lower(content) like ?", matcher, matcher)
   end
 
+  def self.this_week
+    where('created_at > ?', 1.week.ago)
+  end
+
   def lead
     if content.length < 300
       content
