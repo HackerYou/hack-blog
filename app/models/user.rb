@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   end
 
   def self.at_least_18
-    where('age < ?', 18.years.ago)
+    where("date(date_of_birth) <= ?", 18.years.ago.to_date)
   end
 
   # Note this ia a pretty bad example since the `age` column is not one
