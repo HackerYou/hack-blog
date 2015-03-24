@@ -1,6 +1,6 @@
 <article class='post'>
 	<div class='post-byline'>
-		Posted by <%= post.author %> in <%= post.category %>
+		Posted by <%= post.user.name %> in <%= post.category %>
 	</div>
   <h2 class='post-title'>
     <%= link_to post_path(post) do %>

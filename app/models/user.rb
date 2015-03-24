@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates :gender, inclusion: {in: ['m', 'f', 'o'] }
 
+  has_many :posts
+
   def self.male
     where(gender: 'm')
   end
