@@ -7,6 +7,10 @@ gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
+gem 'devise'
+gem 'omniauth-twitter'
+
+gem 'dotenv-rails', :groups => [:development, :test]
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'

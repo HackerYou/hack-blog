@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
-  resources :comments
+  get '/admin' => 'dashboard#admin', as: :dashboard_admin
+  get '/peeps' => 'dashboard#normy', as: :dashboard_normy
 
+  devise_for :users, controllers: {
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
+
+  resources :comments
   resources :users
 
   get '/posts/search' => 'posts#search'

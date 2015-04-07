@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
-  validates :email, presence: true
-  validates :gender, inclusion: {in: ['m', 'f', 'o'] }
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable,
+         :omniauthable, omniauth_providers: [:twitter]
 
   has_many :posts
 
