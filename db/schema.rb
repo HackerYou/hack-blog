@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 20150406224550) do
     t.datetime "updated_at",                          null: false
     t.integer  "age"
     t.string   "gender"
+    t.string   "provider"
+    t.string   "uid"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
