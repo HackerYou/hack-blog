@@ -26,6 +26,17 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
+      if params[:post_to_twitter].present?
+        client = Twitter::REST::Client.new do |config|
+          config.consumer_key        = ENV['TWITTER_APP_ID']
+          config.consumer_secret     = ENV['TWITTER_SECRET']
+          config.access_token        = current_user.token
+          config.access_token_secret = current_user.secret
+        end
+
+        client.update("New Blog Post: #{@post.title}")
+      end
+
       redirect_to '/posts', notice: "Post create!"
     else
       render 'new'
