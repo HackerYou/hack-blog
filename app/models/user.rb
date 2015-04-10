@@ -7,6 +7,22 @@ class User < ActiveRecord::Base
 
   has_many :posts
 
+  def self.find_by_twitter(auth)
+
+    user = User.find_by( auth.slice('provider', 'uid') ) ||
+            User.create!(
+                provider: auth['provider'],
+                uid: auth['uid'],
+                name: auth['info']['name']
+            )
+    user.update(
+      token: auth['credentials']['token'],
+      secret: auth['credentials']['secret']
+    )
+
+    user
+  end
+
   def self.male
     where(gender: 'm')
   end

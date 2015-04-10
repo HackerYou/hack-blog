@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406224550) do
+ActiveRecord::Schema.define(version: 20150409234659) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "content"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20150406224550) do
     t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   add_index "likes", ["post_id"], name: "index_likes_on_post_id"
@@ -51,8 +52,6 @@ ActiveRecord::Schema.define(version: 20150406224550) do
     t.datetime "updated_at",                          null: false
     t.integer  "age"
     t.string   "gender"
-    t.string   "provider"
-    t.string   "uid"
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
@@ -62,6 +61,10 @@ ActiveRecord::Schema.define(version: 20150406224550) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "token"
+    t.string   "secret"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
